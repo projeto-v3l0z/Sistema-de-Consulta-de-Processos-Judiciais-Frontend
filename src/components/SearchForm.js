@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import BackToTopButton from './BackToTopButton';
 
 export default function SearchForm({ initial = {}, tribunais = [], situacoes = [] }) {
   const router = useRouter();
@@ -94,6 +95,7 @@ export default function SearchForm({ initial = {}, tribunais = [], situacoes = [
           </button>
         </div>
       </form>
+      <BackToTopButton />
     </div>
   );
 }
