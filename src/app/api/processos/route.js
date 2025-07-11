@@ -1,4 +1,3 @@
-// src/app/api/processos/route.js
 import { NextResponse } from 'next/server';
 
 const mockData = [
@@ -24,7 +23,7 @@ const mockData = [
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  // você pode filtrar por query, tribunal, etc., se quiser
+  // filtrar por query, tribunal, etc.
   const query = searchParams.get('query');
   if (!query) {
     return NextResponse.json([]);

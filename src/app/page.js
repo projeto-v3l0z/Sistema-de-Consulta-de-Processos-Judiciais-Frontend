@@ -1,10 +1,9 @@
-// src/app/page.js
 'use client';
 
 import SearchForm from '../components/SearchForm';
 
 export default function Home() {
-  // você pode pré-definir listas de tribunais e situações aqui
+  // testes
   const tribunais = [
     { value: 'TJ-SP', label: 'TJ-SP' },
     { value: 'TRF-3', label: 'TRF-3' },
