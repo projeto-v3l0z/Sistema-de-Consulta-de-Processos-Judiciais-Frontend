@@ -1,0 +1,216 @@
+.apresentacaoSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.apresentacaoSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="2"/></g></svg>');
+  opacity: 0.3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.logoContainer {
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logoIcon {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.3));
+}
+
+.nomeSistema {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(96, 165, 250, 0.3);
+}
+
+.subtitulo {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.descricaoContainer {
+  text-align: left;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.descricao {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #e2e8f0;
+  margin: 0 0 2rem 0;
+}
+
+.descricao strong {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.objetivos {
+  margin-bottom: 2rem;
+}
+
+.subtitulo2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #fbbf24;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.tecnologias {
+  margin-top: 2rem;
+}
+
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.techItem {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .descricaoContainer {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .apresentacaoSection {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .logoIcon {
+    font-size: 3rem;
+  }
+  
+  .nomeSistema {
+    font-size: 3rem;
+  }
+  
+  .titulo {
+    font-size: 2rem;
+  }
+  
+  .descricao {
+    font-size: 1rem;
+  }
+  
+  .conteudo {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .logoIcon {
+    font-size: 2.5rem;
+  }
+  
+  .nomeSistema {
+    font-size: 2.5rem;
+  }
+  
+  .subtitulo {
+    font-size: 1rem;
+  }
+  
+  .titulo {
+    font-size: 1.75rem;
+  }
+  
+  .techGrid {
+    justify-content: center;
+  }
+}

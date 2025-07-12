@@ -1,95 +1,64 @@
-import Image from "next/image";
+import Navbar from '../components/Navbar/Navbar';
+import ApresentacaoProjeto from '../components/ApresentacaoProjeto/ApresentacaoProjeto';
+import SearchForm from '../components/BuscaCentral/SearchForm';
+import BackToTopButton from '../components/BuscaCentral/BackToTopButton';
+import Equipe from '../components/Equipe/Equipe';
 import styles from "./page.module.css";
 
+
 export default function Home() {
+  // Dados simulados para os filtros do SearchForm
+  const tribunais = [
+    { value: 'tjsp', label: 'TJ-SP' },
+    { value: 'tjrj', label: 'TJ-RJ' },
+    { value: 'tjmg', label: 'TJ-MG' },
+    { value: 'stf', label: 'STF' },
+    { value: 'stj', label: 'STJ' }
+  ];
+
+  const situacoes = [
+    { value: 'andamento', label: 'Em Andamento' },
+    { value: 'suspenso', label: 'Suspenso' },
+    { value: 'arquivado', label: 'Arquivado' },
+    { value: 'julgado', label: 'Julgado' },
+    { value: 'aguardando', label: 'Aguardando Julgamento' }
+  ];
+
   return (
     <div className={styles.page}>
+      <Navbar />
+      
+      <ApresentacaoProjeto />
+      
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Busca Principal - Formulário com filtros para pesquisa de processos */}
+        <section className={styles.searchSection}>
+          <div className={styles.sectionHeader}>
+            <h2>Consulta de Processos Judiciais</h2>
+            <p>Digite o número do processo, CPF, CNPJ ou use filtros específicos para refinar sua pesquisa</p>
+          </div>
+          <SearchForm 
+            tribunais={tribunais}
+            situacoes={situacoes}
+          />
+        </section>
       </main>
+      
+      <Equipe />
+      
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className={styles.footerContent}>
+          <p>&copy; 2025 V3L0Z. Todos os direitos reservados.</p>
+          <div className={styles.footerLinks}>
+            <a href="#privacidade">Política de Privacidade</a>
+            <a href="#termos">Termos de Uso</a>
+            <a href="#contato">Contato</a>
+          </div>
+        </div>
       </footer>
+      
+      {/* Botão de voltar ao topo */}
+      <BackToTopButton />
     </div>
   );
 }
