@@ -35,6 +35,12 @@ export default function ApresentacaoProjeto() {
             <div className={styles.tecnologias}>
               <h3 className={styles.subtitulo2}>Tecnologias Utilizadas:</h3>
               <div className={styles.techGrid}>
+                <span className={styles.techItem}>Python</span>
+                <span className={styles.techItem}>Django 5.2.1</span>
+                <span className={styles.techItem}>Django REST Framework</span>
+                <span className={styles.techItem}>PostgreSQL 15</span>
+                <span className={styles.techItem}>Swagger (drf-yasg)</span>
+                <span className={styles.techItem}>Docker + Docker Compose</span>
                 <span className={styles.techItem}>React</span>
                 <span className={styles.techItem}>Next.js</span>
                 <span className={styles.techItem}>Node.js</span>

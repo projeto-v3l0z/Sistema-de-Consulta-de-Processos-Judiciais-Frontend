@@ -81,6 +81,27 @@
   justify-content: center;
   margin: 0 auto 1.5rem auto;
   border: 4px solid #e0e7ff;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatarImage {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.avatarFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2.5rem;
 }
 
 .membroInfo {
