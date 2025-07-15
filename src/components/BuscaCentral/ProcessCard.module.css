@@ -1,205 +1,79 @@
-/* Estilos para o ProcessCard - Tema Escuro */
 .processCard {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: #181f2a;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease;
-  overflow: hidden;
+  box-shadow: 0 2px 12px #00000022;
+  margin-bottom: 24px;
+  padding: 20px;
+  transition: box-shadow 0.2s;
 }
-
 .processCard:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  transform: translateY(-2px);
-  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 24px #00000044;
 }
-
 .cardHeader {
-  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1rem;
 }
-
-.cardInfo {
-  flex: 1;
-}
-
 .cardTitle {
-  color: #f1f5f9;
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem 0;
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 6px;
 }
-
 .cardText {
-  color: #94a3b8;
-  margin: 0 0 0.5rem 0;
-  font-size: 0.95rem;
+  color: #b0b8c1;
+  margin: 2px 0;
 }
-
-.cardText:last-child {
-  margin-bottom: 0;
+.statusBadge {
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  margin-left: 6px;
+  color: #fff;
 }
-
-.cardText strong {
-  color: #cbd5e1;
-  font-weight: 600;
-}
-
+.andamento { background: #007bff; }
+.julgado { background: #28a745; }
+.suspenso { background: #ffc107; color: #222; }
+.arquivado { background: #6c757d; }
+.aguardando { background: #17a2b8; }
 .expandButton {
   background: none;
   border: none;
-  color: #60a5fa;
+  color: #fff;
+  font-size: 1.5em;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  margin-left: 12px;
+}
+.cardDetails {
+  margin-top: 16px;
+  border-top: 1px solid #222b3a;
+  padding-top: 12px;
+}
+.detailText {
+  color: #b0b8c1;
+  margin: 4px 0;
+}
+
+.cardMetaRow {
+  display: flex;
+  gap: 32px;
+  margin: 12px 0 8px 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cardMetaItem {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px;
+  gap: 6px;
+  min-width: 120px;
 }
 
-.expandButton:hover {
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
-}
-
-.expandButton:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-.expandIcon {
-  font-size: 1.25rem;
-  transition: transform 0.2s ease;
-}
-
-.expandButton[data-expanded="true"] .expandIcon {
-  transform: rotate(90deg);
-}
-
-.cardDetails {
-  padding: 0 1.5rem 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(15, 23, 42, 0.5);
-  animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 200px;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-}
-
-.detailText {
-  color: #cbd5e1;
-  margin: 0 0 0.75rem 0;
-  font-size: 0.95rem;
-}
-
-.detailText:last-child {
-  margin-bottom: 0;
-}
-
-.detailText strong {
-  color: #f1f5f9;
+.metaLabel {
   font-weight: 600;
-  display: inline-block;
-  min-width: 130px;
+  color: #b0b8c1;
 }
 
-.statusBadge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
+.metaValue {
+  color: #fff;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.statusBadge.andamento {
-  background: #dbeafe;
-  color: #1e40af;
-}
-
-.statusBadge.julgado {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.statusBadge.suspenso {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.statusBadge.arquivado {
-  background: #f3f4f6;
-  color: #374151;
-}
-
-.statusBadge.aguardando {
-  background: #e0e7ff;
-  color: #3730a3;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .cardHeader {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-  
-  .expandButton {
-    align-self: center;
-  }
-  
-  .cardTitle {
-    font-size: 1rem;
-    word-break: break-all;
-  }
-  
-  .cardDetails {
-    padding: 1rem;
-  }
-  
-  .detailText strong {
-    min-width: auto;
-    display: block;
-    margin-bottom: 0.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .cardHeader {
-    padding: 1rem;
-  }
-  
-  .cardTitle {
-    font-size: 0.95rem;
-  }
-  
-  .cardText {
-    font-size: 0.9rem;
-  }
-  
-  .detailText {
-    font-size: 0.9rem;
-  }
 }

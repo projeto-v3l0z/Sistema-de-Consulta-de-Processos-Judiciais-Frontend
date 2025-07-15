@@ -32,7 +32,7 @@ export default function BackToTopButton() {
         alignItems: 'center',
         justifyContent: 'center',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-        background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
+        background: 'linear-gradient(135deg,rgb(11, 12, 12),rgb(17, 17, 17))',
         color: 'white',
         border: 'none',
         cursor: 'pointer',
@@ -50,7 +50,11 @@ export default function BackToTopButton() {
       }}
       aria-label="Voltar ao topo"
     >
-      ↑
+      <img
+        src="/icons/Rocket.svg"
+        alt="Voltar ao topo"
+        style={{ width: '30px', height: '30px' }}>
+      </img>
     </button>
   ) : null;
 }
