@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+📘 SCPJ - Frontend
 
-## Getting Started
+Interface web do Sistema de Consulta Processual Judicial (SCPJ), desenvolvida em Next.js e integrada à API Django para consulta de processos via DataJud (CNJ), autenticação JWT e visualização responsiva.
 
-First, run the development server:
+🚀 Tecnologias utilizadas
 
-```bash
+⚛️ Next.js 14
+
+🎨 CSS Modules
+
+📦 Axios
+
+🔐 JWT (Autenticação com token)
+
+📥 Clonando o projeto
+
+git clone https://github.com/seu-usuario/scpj-frontend.git
+cd scpj-frontend
+
+📦 Instalando dependências
+
+npm install
+# ou
+pnpm install
+
+🛠️ Criando o arquivo .env.local
+
+Crie um arquivo .env.local na raiz com o seguinte conteúdo:
+
+NEXT_PUBLIC_API_URL=http://localhost:8000/api
+
+Altere a URL se estiver usando o backend em outro host/porta.
+
+▶️ Rodando em modo desenvolvimento
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse em: http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+📂 Estrutura principal
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+├── pages/             # Rotas do Next.js
+├── components/        # Componentes reutilizáveis (cards, formulários, etc.)
+├── lib/api.js         # Integração com backend via Axios
+├── styles/            # CSS Modules
+├── public/            # Assets públicos
+├── .env.local         # URL da API
+└── README.md
 
-## Learn More
+🔐 Fluxo de autenticação
 
-To learn more about Next.js, take a look at the following resources:
+Cadastro: /cadastro
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Login: /login
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Token JWT: armazenado em localStorage (access) e usado em chamadas autenticadas via header Authorization: Bearer
 
-## Deploy on Vercel
+🔎 Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Busca por número do processo, CPF ou nome da parte
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Consulta unificada local + DataJud (CNJ)
+
+Autenticação e proteção de rotas
+
+Integração responsiva com API SCPJ
